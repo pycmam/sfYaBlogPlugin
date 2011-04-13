@@ -1,0 +1,37 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           BlogPost
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          sfYaBlogPostAdmin
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+    css:                   false
+
+    config:
+      actions: ~
+      fields:
+        slug:               { label: URL }
+        title:              { label: Заголовок }
+        short:              { label: Краткий текст }
+        content:            { label: Полный текст }
+        is_published:       { label: Опубликовано }
+        meta_title:         { label: Meta-Title }
+        meta_keywords:      { label: Meta-Keywords }
+        meta_description:   { label: Meta-Description }
+      list:
+        title:              Блог
+        display:            [title, slug, created_at]
+      filter:  ~
+      form:
+        display:
+          "Контент": [title, is_published, short, content]
+          "SEO":  [slug, meta_title, meta_keywords, meta_description]
+      edit:
+        title:              Редактирование поста
+      new:
+        title:              Добавление поста

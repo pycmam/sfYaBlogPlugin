@@ -1,0 +1,23 @@
+options:
+  type: INNODB
+  charset: utf8
+
+BlogPost:
+  tableName:    app_blog_posts
+  actAs:
+    Timestampable:    ~
+  columns:
+    user_id:          { type: integer }
+    slug:             { type: string(64), notnull: true, unique: true }
+    title:            { type: string(255), notnull: true }
+    short:            { type: string, notnull: true }
+    content:          { type: string }
+    is_published:     { type: boolean, notnull: true, default: true }
+    meta_title:       { type: string(255) }
+    meta_keywords:    { type: string(1000) }
+    meta_description: { type: string(2000) }
+  relations:
+    User:
+      class: sfGuardUser
+      local: user_id
+      foreign: id
