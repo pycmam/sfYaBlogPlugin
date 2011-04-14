@@ -23,9 +23,10 @@ generator:
         meta_title:         { label: Meta-Title }
         meta_keywords:      { label: Meta-Keywords }
         meta_description:   { label: Meta-Description }
+        created_at:         { label: Создано }
       list:
         title:              Блог
-        display:            [title, slug, created_at]
+        display:            [=title, slug, created_at]
       filter:  ~
       form:
         display:
