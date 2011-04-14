@@ -1,10 +1,11 @@
 
-sfYaBlogPostAdmin:
-  class: sfDoctrineRouteCollection
-  options:
-    model:                BlogPost
-    module:               sfYaBlogPostAdmin
-    prefix_path:          /sfYaBlogPostAdmin
-    column:               id
-    with_wildcard_routes: true
+#sfYaBlogPostAdmin:
+#  class: sfDoctrineRouteCollection
+#  options:
+#    model:                BlogPost
+#    module:               sfYaBlogPostAdmin
+#    prefix_path:          /sfYaBlogPostAdmin
+#    column:               id
+#    with_wildcard_routes: true
+#    with_show:            false
 
