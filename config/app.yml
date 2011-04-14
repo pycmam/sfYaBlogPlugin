@@ -1,0 +1,6 @@
+all:
+  sf_ya_blog_plugin:
+    tiny_mce_config:
+      width: 700
+      height: 400
+      config: "language:'ru'"

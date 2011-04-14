@@ -1,0 +1,3 @@
+all:
+  javascripts:
+   - /sfYaBlogPlugin/js/tiny_mce/tiny_mce.js
