@@ -4,3 +4,4 @@ all:
       width: 700
       height: 400
       config: "language:'ru'"
+    posts_per_page: 10

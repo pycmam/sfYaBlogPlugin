@@ -9,3 +9,17 @@
 #    with_wildcard_routes: true
 #    with_show:            false
 
+#sfYaBlogPost:
+#  url: /blog
+#  class: sfRequestRoute
+#  params: { module: sfYaBlogPost, action: index }
+#  requirements:
+#    sf_method: [get, head]
+
+#sfYaBlogPost_show:
+#  url: /blog/:slug
+#  class: sfDoctrineRoute
+#  options: { model: BlogPost, type: object }
+#  params: { module: sfYaBlogPost, action: show }
+#  requirements:
+#    sf_method: [get, head]
