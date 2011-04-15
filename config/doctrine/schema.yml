@@ -21,3 +21,24 @@ BlogPost:
       class: sfGuardUser
       local: user_id
       foreign: id
+
+BlogComment:
+  tableName:    app_blog_comments
+  actAs:
+    Timestampable:    ~
+  columns:
+    post_id:          { type: integer, notnull: true }
+    user_id:          { type: integer, notnull: true }
+    name:             { type: string(255), notnull: true }
+    comment:          { type: string(2000), notnull: true }
+  relations:
+    Post:
+      class: BlogPost
+      local: post_id
+      foreign: id
+      foreignAlias: Comments
+    User:
+      class: sfGuardUser
+      local: user_id
+      foreign: id
+      autoComplete: false
