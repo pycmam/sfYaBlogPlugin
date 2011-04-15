@@ -16,4 +16,18 @@ class PluginBlogPostTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('PluginBlogPost');
     }
+
+
+    /**
+     * Выборка опубликованны постов
+     *
+     * @param string $alias
+     * @return Doctrine_Query
+     */
+    public function queryActive($alias = 'a')
+    {
+        return $this->createQuery($alias)
+            ->andWhere($alias .'.is_published = 1')
+            ->orderBy($alias .'.created_at DESC');
+    }
 }
