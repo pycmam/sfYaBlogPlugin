@@ -13,4 +13,6 @@ slot('page_header', $post->getTitle());
     <?php echo $post->getContent(ESC_RAW); ?>
 </div>
 
+<?php include_partial('sfYaBlogComment/comments', array('post' => $post)); ?>
+
 <p><?php echo link_to('Другие записи блога', 'sfYaBlogPost'); ?></p>

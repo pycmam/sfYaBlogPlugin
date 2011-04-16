@@ -4,6 +4,8 @@
  *
  * @param Doctrine_Collection $posts
  */
+
+$posts->loadRelated('Comments');
 ?>
 
 <?php foreach ($posts as $post): ?>
@@ -12,9 +14,19 @@
     <div class="blog-post-content">
         <?php echo $post->getShort(ESC_RAW); ?>
 
-        <?php if ($post->getContent()): ?>
-            <?php echo link_to('Читать далее...', 'sfYaBlogPost_show', $post); ?>
+        <p>
+        <?php echo link_to('Комментарии', 'sfYaBlogPost_show', $post, array(
+            'anchor' => 'comments',
+        )); ?>
+
+        <?php if($count = $post->getComments()->count()): ?>
+            (<?php echo $count; ?>)
         <?php endif; ?>
+
+        <?php if ($post->getContent()): ?>
+            | <?php echo link_to('Читать далее...', 'sfYaBlogPost_show', $post); ?>
+        <?php endif; ?>
+        </p>
     </div>
 </div>
 <?php endforeach; ?>
